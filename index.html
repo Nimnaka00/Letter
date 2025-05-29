@@ -19,16 +19,20 @@
         justify-content: center;
         align-items: center;
         font-family: "Open Sans", sans-serif;
+        padding: 1rem;
       }
 
       .envelope {
-        width: 460px;
-        height: 360px;
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+        aspect-ratio: 460 / 360;
         position: relative;
         background: #fde7ec;
         border-radius: 10px;
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         overflow: hidden;
+        cursor: pointer;
       }
 
       .top-flap {
@@ -60,6 +64,7 @@
         transform: translateY(150%);
         transition: transform 1s ease-in-out 1s;
         z-index: 1;
+        overflow-y: auto;
       }
 
       .letter.show {
@@ -94,6 +99,20 @@
         }
         50% {
           transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .letter h2 {
+          font-size: 1.5rem;
+        }
+
+        .letter p {
+          font-size: 0.9rem;
+        }
+
+        .heart {
+          font-size: 1.5rem;
         }
       }
     </style>
